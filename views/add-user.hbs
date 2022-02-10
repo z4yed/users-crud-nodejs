@@ -1,0 +1,71 @@
+<h2>Add New User</h2>
+
+<form method="POST" action="/add-user">
+  <div class="row">
+    <div class="col-6">
+      <label for="exampleInputEmail1" class="form-label">Email address</label>
+      <input
+        type="email"
+        class="form-control"
+        name="email"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+      />
+      <div id="emailHelp" class="form-text">We'll never share your email with
+        anyone else.</div>
+    </div>
+    <div class="col-6">
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Phone</label>
+        <input
+          type="text"
+          class="form-control"
+          name="phone"
+          id="exampleInputPassword1"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-6">
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">First Name</label>
+        <input
+          type="text"
+          name="first_name"
+          class="form-control"
+          id="exampleInputPassword1"
+        />
+      </div>
+    </div>
+    <div class="col-6">
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Last Name</label>
+        <input
+          type="text"
+          name="last_name"
+          class="form-control"
+          id="exampleInputPassword1"
+        />
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Comment</label>
+        <textarea
+          style="height: 200px;"
+          type="text"
+          name="comment"
+          class="form-control"
+          id="exampleInputPassword1"
+        ></textarea>
+      </div>
+    </div>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>

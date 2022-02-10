@@ -1,0 +1,83 @@
+{{#each users}}
+  <h2>Edit User : {{this.first_name}}</h2>
+
+  {{#if alert}}
+    <div class="alert alert-success" role="alert">
+      {{alert}}
+    </div>
+  {{/if}}
+
+  <form method="POST" action="/update-user/{{this.id}}">
+    <div class="row">
+      <div class="col-6">
+        <label for="exampleInputEmail1" class="form-label">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          name="email"
+          value="{{this.email}}"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+        />
+        <div id="emailHelp" class="form-text">We'll never share your email with
+          anyone else.</div>
+      </div>
+      <div class="col-6">
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Phone</label>
+          <input
+            type="text"
+            class="form-control"
+            name="phone"
+            value="{{this.phone}}"
+            id="exampleInputPassword1"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-6">
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">First Name</label>
+          <input
+            type="text"
+            name="first_name"
+            value="{{this.first_name}}"
+            class="form-control"
+            id="exampleInputPassword1"
+          />
+        </div>
+      </div>
+      <div class="col-6">
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Last Name</label>
+          <input
+            type="text"
+            name="last_name"
+            class="form-control"
+            value="{{this.last_name}}"
+            id="exampleInputPassword1"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-12">
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Comment</label>
+          <textarea
+            style="height: 200px;"
+            type="text"
+            name="comments"
+            class="form-control"
+            id="exampleInputPassword1"
+          >{{this.comments}}</textarea>
+        </div>
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+{{/each}}

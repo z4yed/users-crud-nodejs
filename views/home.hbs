@@ -1,0 +1,49 @@
+<div class="row my-3">
+  <div class="col-6">Users List</div>
+  <div class="col-6 d-flex justify-content-end">
+    <a href="/add-user" type="button" class="btn btn-success">+ Add User</a>
+  </div>
+</div>
+
+{{#if alert}}
+  <div class="alert alert-success" role="alert">
+    {{alert}}
+  </div>
+{{/if}}
+
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th scope="col">ID</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Phone</th>
+      <th scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each users}}
+      <tr>
+        <th scope="row">{{this.id}}</th>
+        <td>{{this.first_name}}</td>
+        <td>{{this.last_name}}</td>
+        <td>{{this.email}}</td>
+        <td>{{this.phone}}</td>
+        <td>
+          <a href="#" type="button" class="btn btn-info btn-sm"><i
+              class="bi bi-eye"
+            > View</i></a>
+          <a
+            href="/update-user/{{this.id}}"
+            type="button"
+            class="btn btn-primary btn-sm"
+          ><i class="bi bi-pencil"> Edit</i></a>
+          <a href="/{{this.id}}" type="button" class="btn btn-danger btn-sm"><i
+              class="bi bi-person-x"
+            > Delete</i></a>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
